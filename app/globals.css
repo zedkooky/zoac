@@ -179,7 +179,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .course p{color:var(--mist);font-size:15px;flex:1}
 
 /* course detail rows */
-.crow{display:grid;grid-template-columns:.9fr 1.1fr auto;gap:clamp(24px,4vw,64px);align-items:start;padding:clamp(36px,4vw,56px) 0;border-top:1px solid var(--line-lt)}
+.crow{display:grid;grid-template-columns:.9fr 1.1fr 230px;gap:clamp(24px,4vw,64px);align-items:start;padding:clamp(36px,4vw,56px) 0;border-top:1px solid var(--line-lt)}
 .crow:last-child{border-bottom:1px solid var(--line-lt)}
 @media (max-width:860px){.crow{grid-template-columns:1fr}}
 .ticks{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px}
