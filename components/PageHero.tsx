@@ -1,9 +1,11 @@
 import type { ReactNode } from "react";
+import Credit from "./Credit";
+import type { Photo } from "@/lib/photos";
 
-type Props = { kicker: string; lines: ReactNode[]; lede?: string; image: string; alt?: string; children?: ReactNode; home?: boolean };
+type Props = { kicker: string; lines: ReactNode[]; lede?: string; image: string; alt?: string; children?: ReactNode; home?: boolean; credit?: Photo };
 
 /** Full-bleed hero with Ken Burns zoom and line-masked headline. `lines` are revealed one after another. */
-export default function PageHero({ kicker, lines, lede, image, alt = "", children, home }: Props) {
+export default function PageHero({ kicker, lines, lede, image, alt = "", children, home, credit }: Props) {
   return (
     <section className={`hero${home ? "" : " hero--page"}`}>
       <div className="hero__media">
@@ -21,6 +23,7 @@ export default function PageHero({ kicker, lines, lede, image, alt = "", childre
         {lede && <p className="hero__lede hero-fade" style={{ ["--d" as string]: 250 + lines.length * 160 + 150 }}>{lede}</p>}
         {children && <div className="hero__cta hero-fade" style={{ ["--d" as string]: 250 + lines.length * 160 + 300 }}>{children}</div>}
       </div>
+      {credit && <Credit photo={credit} className="credit--hero" />}
       {home && <div className="hero__scroll">Scroll</div>}
     </section>
   );

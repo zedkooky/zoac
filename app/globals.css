@@ -278,3 +278,10 @@ button,input,select,textarea{font:inherit;color:inherit}
 .leaflet-popup-content b{font-family:var(--serif);font-weight:500;font-size:20px;display:block}
 .legend{display:flex;flex-wrap:wrap;gap:18px;margin-top:18px;font-size:12px;color:var(--mist);letter-spacing:.06em}
 .pending{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+
+/* Unsplash credit chip */
+.credit{position:absolute;left:8px;bottom:8px;z-index:3;max-width:calc(100% - 16px);padding:3px 8px;border-radius:5px;background:rgba(8,22,31,.6);color:#fff;font:10px/1.3 var(--sans);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;backdrop-filter:blur(6px)}
+.credit a{text-decoration:underline;text-underline-offset:2px}
+.credit--hero{left:auto;right:var(--pad);bottom:14px}
+.card-link{position:absolute;inset:0;z-index:2}
+@media print{.credit{display:none}}

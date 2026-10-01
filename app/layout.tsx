@@ -34,6 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "document.documentElement.classList.add('js');try{if(sessionStorage.getItem('zoac-pre'))document.documentElement.classList.add('ready','skip-pre')}catch(e){}",
           }}
         />
+        <link rel="preconnect" href="https://images.unsplash.com" />
         <style>{`.skip-pre .pre{display:none}`}</style>
       </head>
       <body>

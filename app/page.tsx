@@ -3,13 +3,15 @@ import PageHero from "@/components/PageHero";
 import Marquee from "@/components/Marquee";
 import CtaBand from "@/components/CtaBand";
 import FilmPlayer from "@/components/FilmPlayer";
+import Credit from "@/components/Credit";
 import { COURSES, VALUES } from "@/lib/site";
+import { PHOTOS, unsplash, type Photo } from "@/lib/photos";
 
-const EXPERIENCES = [
+const EXPERIENCES: { n: string; t: string; d: string; img: string; href: string; photo?: Photo }[] = [
   { n: "01", t: "Scuba & snorkel", d: "Lake Tanganyika's clear freshwater reefs, cichlid gardens and granite walls.", img: "/img/gear.jpg", href: "/dive" },
-  { n: "02", t: "Kayak & canoe", d: "Multi-day paddling routes on the Lower Zambezi.", img: "/img/sunset-boat.jpg", href: "/expeditions#kayak" },
-  { n: "03", t: "Hike & trek", d: "Guided walks across the Muchinga Escarpment and Nyika Plateau.", img: "/img/market.jpg", href: "/expeditions#trek" },
-  { n: "04", t: "Off-road safari", d: "4x4 expeditions into national parks and remote wilderness.", img: "/img/airfield.jpg", href: "/expeditions#safari" },
+  { n: "02", t: "Kayak & canoe", d: "Multi-day paddling routes on the Lower Zambezi.", img: unsplash(PHOTOS.river.id, 900), photo: PHOTOS.river, href: "/expeditions#kayak" },
+  { n: "03", t: "Hike & trek", d: "Guided walks across the Muchinga Escarpment and Nyika Plateau.", img: unsplash(PHOTOS.walking.id, 900), photo: PHOTOS.walking, href: "/expeditions#trek" },
+  { n: "04", t: "Off-road safari", d: "4x4 expeditions into national parks and remote wilderness.", img: unsplash(PHOTOS.drive.id, 900), photo: PHOTOS.drive, href: "/expeditions#safari" },
 ];
 
 export default function Home() {
@@ -54,11 +56,13 @@ export default function Home() {
           </div>
           <div className="cards">
             {EXPERIENCES.map((e, i) => (
-              <Link key={e.t} href={e.href} className="card" data-reveal={String(i * 120)}>
+              <article key={e.t} className="card" data-reveal={String(i * 120)}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={e.img} alt="" loading="lazy" />
+                <img src={e.img} alt={e.photo?.alt ?? ""} loading="lazy" />
+                <Link href={e.href} className="card-link" aria-label={e.t} />
                 <div className="card__body"><span className="card__no">{e.n}</span><h3>{e.t}</h3><p>{e.d}</p></div>
-              </Link>
+                {e.photo && <Credit photo={e.photo} />}
+              </article>
             ))}
           </div>
         </div>
