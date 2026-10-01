@@ -9,15 +9,14 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
 };
 
-export default async function Contact({ searchParams }: { searchParams: Promise<{ topic?: string }> }) {
-  const { topic } = await searchParams;
+export default function Contact() {
   return (
     <>
       <PageHero kicker="Contact" lines={["Let's plan", <em key="e">the next one</em>]}
         lede="Tell us what you have in mind — a first dive, a river expedition, or a rescue team that needs certifying." image="/img/sunset-boat.jpg" alt="Canoe on Lake Tanganyika at sunset" />
       <section className="section">
         <div className="wrap split split--top">
-          <div data-reveal><EnquiryForm defaultTopic={topic?.slice(0, 80)} /></div>
+          <div data-reveal><EnquiryForm /></div>
           <div data-reveal="150">
             <p className="eyebrow">Talk to us directly</p>
             <div className="contact-card"><b><a href={waLink()} target="_blank" rel="noopener noreferrer">WhatsApp {SITE.whatsapp.label}</a></b><span>Fastest reply</span>{SITE.whatsapp.display}</div>

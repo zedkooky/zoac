@@ -7,7 +7,7 @@ Marketing site for the Zambian Outdoor Adventure Company. Next.js 15 (App Router
 ```bash
 npm install
 npm run dev      # http://localhost:3000
-npm run build && npm start
+npm run build      # static site in ./out
 ```
 
 ## Design system
@@ -30,10 +30,17 @@ Motion: Ken Burns hero, logo preloader (once per session), line-masked headline 
 - `data/dive-sites.json` — generated from the three dive-site CSVs (recreational, snorkel/freedive, technical). Sites without GPS show as "surveying soon".
 - Placeholder imagery in `public/img` — swap for final photography. Course blurbs for Try Scuba, Pond Scuba and Open Water are draft copy to confirm.
 
+## Deploy (Verpex, FTP)
+
+Static export (`output: "export"`). Pushing to `main` runs `.github/workflows/deploy-ftp.yml`, which builds the site and FTP-uploads `out/` — same pattern as safari.today.
+
+Repo secrets required: `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`.
+
+Before the first deploy, on the Verpex account:
+1. Turn on AutoSSL for zambianadventures.com (`public/.htaccess` forces HTTPS).
+2. Create the mailbox `enquiries@zambianadventures.com` (the sender used by `enquiry.php`).
+3. Add zambianoutdoors.com (and www) as an alias/parked domain on the same account — `.htaccess` 301-redirects it to zambianadventures.com.
+
 ## Enquiry form
 
-`POST /api/enquiry` emails via [Resend](https://resend.com). Set `RESEND_API_KEY` (see `.env.example`). Without it the form falls back to a pre-filled `mailto:`.
-
-## Domains
-
-`next.config.mjs` 301-redirects `zambianoutdoors.com` (and `www.`) to `zambianadventures.com`. Point both domains' DNS at the deployment.
+`public/enquiry.php` receives the Contact-page form, emails `zambianoutdooradventures@gmail.com` (reply-to is the visitor) and keeps a CSV copy in `../zoac-enquiries/` (outside `public_html` when writable). Edit the constants at the top of the file to change recipients. If the request fails, the form falls back to a pre-filled `mailto:`.

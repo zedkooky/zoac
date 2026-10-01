@@ -1,18 +1,11 @@
-const PRIMARY = "zambianadventures.com";
-
 /** @type {import('next').NextConfig} */
+// Static export: the site is uploaded to Verpex shared hosting over FTP (see .github/workflows/deploy-ftp.yml).
+// Redirects, HTTPS and caching live in public/.htaccess; the enquiry form posts to public/enquiry.php.
 const nextConfig = {
+  output: "export",
+  trailingSlash: true,
   reactStrictMode: true,
   poweredByHeader: false,
-  async redirects() {
-    // zambianoutdoors.com (and www) → primary domain. DNS must point both at this deployment.
-    return ["zambianoutdoors.com", "www.zambianoutdoors.com", `www.${PRIMARY}`].map((host) => ({
-      source: "/:path*",
-      has: [{ type: "host", value: host }],
-      destination: `https://${PRIMARY}/:path*`,
-      permanent: true,
-    }));
-  },
 };
 
 export default nextConfig;
