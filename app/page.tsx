@@ -23,8 +23,9 @@ export default function Home() {
         kicker="Lake Tanganyika · Lusaka · Mpulungu"
         lines={["Adventure,", <em key="e">professionally</em>, "delivered."]}
         lede="Scuba diving, wilderness expeditions and technical rescue training across Zambia — built from a lake town outward."
-        image="/img/sunset-boat.jpg"
-        alt="A fishing canoe on Lake Tanganyika at sunset"
+        image="/img/hero-lake-poster.jpg"
+        alt="Aerial view of a palm-fringed beach and clear water on the lakeshore"
+        video="/video/hero-lake.mp4"
       >
         <Link className="btn" href="/courses">Try scuba · K2,200</Link>
         <Link className="btn btn--ghost" href="/expeditions">Explore expeditions</Link>

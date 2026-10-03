@@ -1,16 +1,18 @@
 import type { ReactNode } from "react";
 import Credit from "./Credit";
+import HeroVideo from "./HeroVideo";
 import type { Photo } from "@/lib/photos";
 
-type Props = { kicker: string; lines: ReactNode[]; lede?: string; image: string; alt?: string; children?: ReactNode; home?: boolean; credit?: Photo };
+type Props = { kicker: string; lines: ReactNode[]; lede?: string; image: string; alt?: string; children?: ReactNode; home?: boolean; credit?: Photo; video?: string };
 
 /** Full-bleed hero with Ken Burns zoom and line-masked headline. `lines` are revealed one after another. */
-export default function PageHero({ kicker, lines, lede, image, alt = "", children, home, credit }: Props) {
+export default function PageHero({ kicker, lines, lede, image, alt = "", children, home, credit, video }: Props) {
   return (
-    <section className={`hero${home ? "" : " hero--page"}`}>
+    <section className={`hero${home ? "" : " hero--page"}${video ? " hero--video" : ""}`}>
       <div className="hero__media" data-parallax="0.18">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img className="kb" src={image} alt={alt} fetchPriority="high" />
+        {video && <HeroVideo src={video} poster={image} />}
       </div>
       <div className="hero__shade" />
       <div className="wrap hero__body">
