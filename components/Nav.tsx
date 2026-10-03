@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { NAV } from "@/lib/site";
+import { lockScroll } from "@/lib/scroll";
 
 export default function Nav() {
   const path = usePathname();
@@ -15,7 +16,7 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", f);
   }, []);
   useEffect(() => setOpen(false), [path]);
-  useEffect(() => { document.body.style.overflow = open ? "hidden" : ""; }, [open]);
+  useEffect(() => { document.body.style.overflow = open ? "hidden" : ""; lockScroll(open); }, [open]);
 
   const brand = (
     <Link href="/" className="brand" aria-label="Zambian Outdoors Adventure Co. — home">

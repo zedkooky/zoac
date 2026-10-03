@@ -4,7 +4,7 @@ import CtaBand from "@/components/CtaBand";
 import { SITE, VALUES } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About ZOAC",
+  title: "About us",
   description: "Founded in 2023 on the shores of Lake Tanganyika, the Zambian Outdoor Adventure Company is a Lusaka-headquartered adventure and outdoor training operator.",
   alternates: { canonical: "/about" },
 };

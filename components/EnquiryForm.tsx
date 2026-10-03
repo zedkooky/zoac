@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { SITE } from "@/lib/site";
+import { sendEnquiry } from "@/lib/enquiry";
 
 const TOPICS = ["Discover Scuba Diving", "Try Scuba", "Pond Scuba", "Open Water certification", "Lake Tanganyika dive trip", "Kayaking — Lower Zambezi", "Hiking & trekking", "Off-road safari", "School or corporate programme", "Rescue / industrial training", "Something else"];
 
@@ -17,17 +17,9 @@ export default function EnquiryForm() {
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
     setState({ kind: "sending" });
-    try {
-      const res = await fetch("/enquiry.php", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(data) });
-      if (!res.ok) throw new Error(String(res.status));
-      form.reset();
-      setState({ kind: "ok", msg: "Thank you — we'll be in touch shortly." });
-    } catch {
-      // Fallback: open the visitor's mail app with the enquiry pre-filled.
-      const body = Object.entries(data).filter(([k, v]) => v && k !== "website").map(([k, v]) => `${k}: ${v}`).join("\n");
-      window.location.href = `mailto:${SITE.email}?subject=${encodeURIComponent("Enquiry: " + (data.topic || "ZOAC"))}&body=${encodeURIComponent(body)}`;
-      setState({ kind: "err", msg: "We couldn't send that automatically, so we've opened your email app instead. You can also WhatsApp us." });
-    }
+    const result = await sendEnquiry(data);
+    if (result.kind === "ok") form.reset();
+    setState(result);
   }
 
   return (

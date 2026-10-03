@@ -73,7 +73,7 @@ export default function DiveMap() {
               </button>
             ))}
           </div>
-          <ul className="sitelist">
+          <ul className="sitelist" data-lenis-prevent>
             {located.map((s) => (
               <li key={s.name}>
                 <button aria-current={active === s.name} onClick={() => focus(s)}>

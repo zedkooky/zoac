@@ -8,7 +8,7 @@ type Props = { kicker: string; lines: ReactNode[]; lede?: string; image: string;
 export default function PageHero({ kicker, lines, lede, image, alt = "", children, home, credit }: Props) {
   return (
     <section className={`hero${home ? "" : " hero--page"}`}>
-      <div className="hero__media">
+      <div className="hero__media" data-parallax="0.18">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img className="kb" src={image} alt={alt} fetchPriority="high" />
       </div>

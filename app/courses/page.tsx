@@ -2,7 +2,25 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
-import { COURSES, PERFECT_FOR } from "@/lib/site";
+import { COURSES, PERFECT_FOR, SITE } from "@/lib/site";
+
+const priceOf = (p: string) => ({ priceCurrency: p.startsWith("USD") ? "USD" : "ZMW", price: p.replace(/[^\d.]/g, "") });
+const COURSES_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  itemListElement: COURSES.map((c, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    item: {
+      "@type": "Course",
+      name: c.name,
+      description: c.blurb,
+      provider: { "@id": `${SITE.url}/#org` },
+      offers: { "@type": "Offer", category: "Paid", availability: "https://schema.org/InStock", url: `${SITE.url}/courses/`, ...priceOf(c.price) },
+      hasCourseInstance: { "@type": "CourseInstance", courseMode: "Onsite", ...(c.slug === "open-water" ? { location: "Lake Tanganyika, Mpulungu, Zambia" } : {}) },
+    },
+  })),
+};
 
 export const metadata: Metadata = {
   title: "Scuba courses & prices",
@@ -13,6 +31,7 @@ export const metadata: Metadata = {
 export default function Courses() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(COURSES_SCHEMA) }} />
       <PageHero kicker="Courses & pricing" lines={["Learn to", <em key="e">breathe</em>, "underwater"]}
         lede="Safe, controlled and led by certified instructors — from a first taste of scuba to full Open Water certification."
         image="/img/pool-dsd.jpg" alt="Two divers sharing the OK signal underwater" />

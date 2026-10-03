@@ -45,7 +45,7 @@ export default function Dive() {
         <div className="wrap split">
           <div className="photo" style={{ aspectRatio: "4/3" }} data-reveal="fade">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/img/pool-dsd.jpg" alt="Instructor and student sharing the OK signal underwater in a pool" loading="lazy" />
+            <img data-parallax="0.07" src="/img/pool-dsd.jpg" alt="Instructor and student sharing the OK signal underwater in a pool" loading="lazy" />
           </div>
           <div>
             <p className="eyebrow" data-reveal>Never dived?</p>

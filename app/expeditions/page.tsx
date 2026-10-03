@@ -29,7 +29,7 @@ export default function Expeditions() {
             <article className="split" key={b.id} id={b.id} style={{ marginBottom: "clamp(64px,8vw,120px)", direction: i % 2 ? "rtl" : "ltr" }}>
               <div className="photo" style={{ aspectRatio: "4/3" }} data-reveal="fade">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={b.img} alt={b.alt} loading="lazy" />
+                <img data-parallax="0.07" src={b.img} alt={b.alt} loading="lazy" />
                 {b.photo && <Credit photo={b.photo} />}
               </div>
               <div style={{ direction: "ltr" }}>

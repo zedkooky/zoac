@@ -1,8 +1,9 @@
 export const SITE = {
   name: "Zambian Outdoor Adventure Company",
+  brand: "Zambian Outdoors Adventure Co.",
   short: "ZOAC",
   url: "https://zambianadventures.com",
-  email: "zambianoutdooradventures@gmail.com",
+  email: "info@zambianadventures.com",
   whatsapp: { label: "Sid Parmar", display: "+260 97 972 7627", wa: "260979727627" },
   people: [
     { name: "Hennie Smit", role: "Operations Director", phone: "+260 77 950 8417", tel: "+260779508417" },

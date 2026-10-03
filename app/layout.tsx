@@ -11,16 +11,37 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import WhatsApp from "@/components/WhatsApp";
 import RevealObserver from "@/components/RevealObserver";
+import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
-  title: { default: "Zambian Outdoor Adventure Company — Scuba, expeditions & rescue training", template: "%s · ZOAC" },
+  title: { default: `Scuba Diving & Outdoor Adventures in Zambia | ${SITE.brand}`, template: `%s | ${SITE.brand}` },
   description:
     "Scuba diving, wilderness expeditions and technical rescue training across Zambia — built on Lake Tanganyika and led by Zambians.",
   alternates: { canonical: "/" },
-  openGraph: { siteName: SITE.name, type: "website", images: ["/img/sunset-boat.jpg"] },
+  openGraph: { siteName: SITE.brand, type: "website", locale: "en_GB", images: [{ url: "/img/sunset-boat.jpg", alt: "A fishing canoe on Lake Tanganyika at sunset" }] },
+  twitter: { card: "summary_large_image" },
   icons: { icon: "/img/logo.png", apple: "/img/logo.png" },
 };
+const ORG_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "@id": `${SITE.url}/#org`,
+  name: SITE.brand,
+  legalName: SITE.name,
+  alternateName: ["ZOAC", SITE.name],
+  url: `${SITE.url}/`,
+  logo: `${SITE.url}/img/logo.png`,
+  image: `${SITE.url}/img/sunset-boat.jpg`,
+  description: "Scuba diving, wilderness expeditions and technical rescue training across Zambia, from Lake Tanganyika to the Lower Zambezi.",
+  email: SITE.email,
+  telephone: SITE.people[1].tel,
+  foundingDate: "2023",
+  address: { "@type": "PostalAddress", addressLocality: "Lusaka", addressCountry: "ZM" },
+  areaServed: { "@type": "Country", name: "Zambia" },
+  contactPoint: SITE.people.map((p) => ({ "@type": "ContactPoint", name: p.name, telephone: p.tel, contactType: "customer service", areaServed: "ZM", availableLanguage: "English" })),
+};
+
 export const viewport: Viewport = { themeColor: "#08161f" };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -36,6 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <link rel="preconnect" href="https://images.unsplash.com" />
         <style>{`.skip-pre .pre{display:none}`}</style>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_SCHEMA) }} />
       </head>
       <body>
         <Preloader />
@@ -44,6 +66,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <WhatsApp />
         <RevealObserver />
+        <SmoothScroll />
       </body>
     </html>
   );
