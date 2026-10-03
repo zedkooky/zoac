@@ -5,7 +5,7 @@ import { SITE, VALUES } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About us",
-  description: "Founded in 2023 on the shores of Lake Tanganyika, the Zambian Outdoor Adventure Company is a Lusaka-headquartered adventure and outdoor training operator.",
+  description: "Founded in 2023 on the shores of Lake Tanganyika, Zambian Outdoors Adventure Co. is a Lusaka-headquartered adventure and outdoor training operator.",
   alternates: { canonical: "/about" },
 };
 
@@ -18,7 +18,7 @@ export default function About() {
         <div className="wrap split split--top">
           <div><p className="eyebrow" data-reveal>About us</p><h2 className="h2" data-reveal="100">Where adventure tourism meets <em>technical capability</em></h2></div>
           <div className="lede">
-            <p data-reveal="100">The Zambian Outdoor Adventure Company is a Lusaka-headquartered adventure tourism and outdoor training operator, delivering scuba diving, hiking, kayaking, off-road safari and wilderness skills experiences across the country.</p>
+            <p data-reveal="100">Zambian Outdoors Adventure Co. is a Lusaka-headquartered adventure tourism and outdoor training operator, delivering scuba diving, hiking, kayaking, off-road safari and wilderness skills experiences across the country.</p>
             <p data-reveal="200" style={{ marginTop: 20 }}>We&apos;ve grown from a single dive outpost in Mpulungu into a national operator working with mining houses, government agencies, conservation partners and travellers from across the world.</p>
             <div className="stats" data-reveal="300">
               <div className="stat"><b>Lusaka</b><span>Headquarters</span></div>

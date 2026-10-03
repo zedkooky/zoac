@@ -15,11 +15,11 @@ import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
-  title: { default: `Scuba Diving & Outdoor Adventures in Zambia | ${SITE.brand}`, template: `%s | ${SITE.brand}` },
+  title: { default: `Scuba Diving & Outdoor Adventures in Zambia | ${SITE.name}`, template: `%s | ${SITE.name}` },
   description:
     "Scuba diving, wilderness expeditions and technical rescue training across Zambia — built on Lake Tanganyika and led by Zambians.",
   alternates: { canonical: "/" },
-  openGraph: { siteName: SITE.brand, type: "website", locale: "en_GB", images: [{ url: "/img/sunset-boat.jpg", alt: "A fishing canoe on Lake Tanganyika at sunset" }] },
+  openGraph: { siteName: SITE.name, type: "website", locale: "en_GB", images: [{ url: "/img/sunset-boat.jpg", alt: "A fishing canoe on Lake Tanganyika at sunset" }] },
   twitter: { card: "summary_large_image" },
   icons: { icon: "/img/logo.png", apple: "/img/logo.png" },
 };
@@ -27,9 +27,8 @@ const ORG_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "TravelAgency",
   "@id": `${SITE.url}/#org`,
-  name: SITE.brand,
-  legalName: SITE.name,
-  alternateName: ["ZOAC", SITE.name],
+  name: SITE.name,
+  alternateName: ["ZOAC", "Zambian Outdoor Adventure Company"],
   url: `${SITE.url}/`,
   logo: `${SITE.url}/img/logo.png`,
   image: `${SITE.url}/img/sunset-boat.jpg`,

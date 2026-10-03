@@ -1,4 +1,4 @@
-// Unsplash stand-ins (same photos and credit pattern as safari.today). Swap for ZOAC photography when available.
+// Unsplash stand-ins with credit chips. Swap for Zambian Outdoors photography when available.
 export type Photo = { id: string; name: string; handle: string; alt: string };
 
 export const UTM = "utm_source=zoac&utm_medium=referral";

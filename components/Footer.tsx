@@ -32,7 +32,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="foot__base">
-          <span>© {new Date().getFullYear()} Zambian Outdoor Adventure Company</span>
+          <span>© {new Date().getFullYear()} {SITE.name}</span>
           <span>Zambian owned, staffed &amp; led</span>
         </div>
       </div>

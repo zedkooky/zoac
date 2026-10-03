@@ -34,7 +34,7 @@ export default function Home() {
       <section className="section">
         <div className="wrap split">
           <div>
-            <p className="eyebrow" data-reveal>About ZOAC</p>
+            <p className="eyebrow" data-reveal>About us</p>
             <h2 className="h2" data-reveal="100">A country defined by <em>water</em> and wilderness.</h2>
           </div>
           <div>
