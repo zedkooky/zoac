@@ -18,10 +18,10 @@ export default function Nav() {
   useEffect(() => { document.body.style.overflow = open ? "hidden" : ""; }, [open]);
 
   const brand = (
-    <Link href="/" className="brand" aria-label="Zambian Outdoor Adventure Company — home">
+    <Link href="/" className="brand" aria-label="Zambian Outdoors Adventure Co. — home">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src="/img/logo.png" alt="" />
-      <span>ZOAC<small>Zambian Outdoor Adventure</small></span>
+      <span>Zambian Outdoors<br />Adventure Co.</span>
     </Link>
   );
   return (

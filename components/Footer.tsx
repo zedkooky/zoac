@@ -10,7 +10,7 @@ export default function Footer() {
             <div className="brand">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/img/logo.png" alt="" />
-              <span>ZOAC<small>Est. 2023</small></span>
+              <span>Zambian Outdoors<br />Adventure Co.<small>Est. 2023</small></span>
             </div>
             <p style={{ maxWidth: "32ch" }}>Adventure, professionally delivered. Built from a lake town outward, and led overwhelmingly by Zambians.</p>
           </div>
