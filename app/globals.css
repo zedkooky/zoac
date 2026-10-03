@@ -251,9 +251,10 @@ button,input,select,textarea{font:inherit;color:inherit}
 .foot__base{margin-top:56px;padding-top:24px;border-top:1px solid var(--line-dk);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:12px}
 
 /* whatsapp */
-.wa{position:fixed;right:clamp(16px,2vw,28px);bottom:clamp(16px,2vw,28px);z-index:45;display:grid;place-items:center;width:60px;height:60px;border-radius:50%;background:#25d366;box-shadow:0 12px 32px rgba(0,0,0,.3);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
-.wa:hover{opacity:1;transform:translateY(-3px) scale(1.05);box-shadow:0 16px 40px rgba(0,0,0,.36)}
-.wa svg{width:32px;height:32px;fill:#fff}
+.wa{position:fixed;right:clamp(16px,2vw,28px);bottom:clamp(16px,2vw,28px);z-index:45;display:grid;place-items:center;width:60px;height:60px;border-radius:50%;background:linear-gradient(140deg,rgba(28,104,112,.78),rgba(10,48,60,.82));-webkit-backdrop-filter:blur(14px) saturate(160%);backdrop-filter:blur(14px) saturate(160%);border:1px solid rgba(170,230,224,.28);box-shadow:0 12px 32px rgba(4,20,26,.32),inset 0 1px 0 rgba(255,255,255,.14);transition:transform .5s var(--ease),box-shadow .5s var(--ease),border-color .5s var(--ease)}
+.wa:hover{opacity:1;transform:translateY(-3px) scale(1.05);border-color:var(--gold);box-shadow:0 16px 40px rgba(4,20,26,.4),inset 0 1px 0 rgba(255,255,255,.14)}
+.wa svg{width:30px;height:30px;fill:var(--gold-lt);transition:fill .5s var(--ease)}
+.wa:hover svg{fill:var(--ivory)}
 
 /* ---------- form ---------- */
 .form{display:grid;gap:22px}
