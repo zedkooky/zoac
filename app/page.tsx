@@ -21,7 +21,7 @@ export default function Home() {
       <PageHero
         home
         kicker="Lake Tanganyika · Lusaka · Mpulungu"
-        lines={["Crazy,", <em key="e">professionally</em>, "delivered."]}
+        lines={["Adventure,", <em key="e">professionally</em>, "delivered."]}
         lede="Scuba diving, wilderness expeditions and technical rescue training across Zambia — built from a lake town outward."
         image="/img/hero-lake-poster.jpg"
         alt="Aerial view of a palm-fringed beach and clear water on the lakeshore"
