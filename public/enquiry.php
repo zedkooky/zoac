@@ -1,13 +1,13 @@
 <?php
 /**
- * Zambian Outdoors enquiry handler (Verpex shared hosting). Receives the Contact-page form as JSON,
+ * Zambian Outdoor Adventure Company enquiry handler (Verpex shared hosting). Receives the Contact-page form as JSON,
  *   1. emails it to NOTIFY_EMAIL (reply-to = the visitor),
  *   2. keeps a CSV copy outside public_html when possible, in case mail() is flaky.
  * Answers JSON; the site's JS falls back to a mailto: link on any failure.
  */
 const NOTIFY_EMAIL = 'zambianoutdooradventures@gmail.com';
 const FROM_EMAIL   = 'enquiries@zambianadventures.com';   // must be a mailbox on this domain (create it in cPanel)
-const FROM_NAME    = 'Zambian Outdoors Website';
+const FROM_NAME    = 'Zambian Outdoor Adventure Company';
 const MAX_PER_HOUR = 5;                                     // per visitor, to stop form spam
 
 header('Cache-Control: no-store');

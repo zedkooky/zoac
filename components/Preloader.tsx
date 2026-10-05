@@ -15,7 +15,7 @@ export default function Preloader() {
     <div className={`pre${out ? " out" : ""}`} aria-hidden="true">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src="/img/logo.png" alt="" />
-      <div className="pre__word">Zambian Outdoors</div>
+      <div className="pre__word">Zambian Outdoor</div>
       <div className="pre__line" />
     </div>
   );

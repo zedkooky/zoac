@@ -28,7 +28,7 @@ const ORG_SCHEMA = {
   "@type": "TravelAgency",
   "@id": `${SITE.url}/#org`,
   name: SITE.name,
-  alternateName: ["ZOAC", "Zambian Outdoor Adventure Company"],
+  alternateName: ["ZOAC", "Zambian Outdoor Adventure Co."],
   url: `${SITE.url}/`,
   logo: `${SITE.url}/img/logo.png`,
   image: `${SITE.url}/img/sunset-boat.jpg`,

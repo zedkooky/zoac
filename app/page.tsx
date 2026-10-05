@@ -147,7 +147,7 @@ export default function Home() {
             <p className="lede" data-reveal="200" style={{ margin: "24px 0 30px" }}>Kit in our forest green, made for the boat, the trail and the drive home. Message us to order, or ask us to put together a team or school order.</p>
             <ul className="tags" data-reveal="250">{MERCH.map((m) => <li key={m}>{m}</li>)}</ul>
             <div className="hero__cta" data-reveal="300" style={{ marginTop: 36, alignItems: "center", gap: "14px 28px" }}>
-              <a className="btn btn--dark" href={waLink("Hi Zambian Outdoors, I'd like to order some merch.")} target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+              <a className="btn btn--dark" href={waLink("Hi Zambian Outdoor Adventure Company, I'd like to order some merch.")} target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
               <Link className="link" href="/contact?topic=Merchandise">Bulk &amp; team orders →</Link>
             </div>
           </div>

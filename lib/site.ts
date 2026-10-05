@@ -1,5 +1,5 @@
 export const SITE = {
-  name: "Zambian Outdoors Adventure Co.",
+  name: "Zambian Outdoor Adventure Company",
   url: "https://zambianadventures.com",
   email: "info@zambianadventures.com",
   whatsapp: { label: "Sid Parmar", display: "+260 97 972 7627", wa: "260979727627" },
@@ -28,7 +28,7 @@ export type Course = {
   details: string[];
 };
 
-// Prices supplied by Zambian Outdoors. Descriptions for Try Scuba / Pond Scuba / Open Water are placeholders to confirm.
+// Prices supplied by Zambian Outdoor Adventure Company. Descriptions for Try Scuba / Pond Scuba / Open Water are placeholders to confirm.
 export const COURSES: Course[] = [
   {
     slug: "discover-scuba-diving",
@@ -79,6 +79,6 @@ export const VALUES = [
   { n: "04", t: "Capability that stays behind", d: "Whether we are training a school group or a mine rescue team, the goal is to leave people more capable than we found them — not simply to deliver an experience and move on." },
 ];
 
-export function waLink(text = "Hi Zambian Outdoors, I'd like to plan an adventure.") {
+export function waLink(text = "Hi Zambian Outdoor Adventure Company, I'd like to plan an adventure.") {
   return `https://wa.me/${SITE.whatsapp.wa}?text=${encodeURIComponent(text)}`;
 }
