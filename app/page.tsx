@@ -5,7 +5,9 @@ import CtaBand from "@/components/CtaBand";
 import CustomPackageForm from "@/components/CustomPackageForm";
 import FilmPlayer from "@/components/FilmPlayer";
 import Credit from "@/components/Credit";
-import { COURSES, VALUES } from "@/lib/site";
+import { COURSES, VALUES, waLink } from "@/lib/site";
+
+const MERCH = ["Polo shirts", "Tees", "Caps", "Steel bottles", "Canvas backpacks", "Enamel mugs", "Notebooks", "Paracord bracelets", "Patches & stickers"];
 import { PHOTOS, unsplash, type Photo } from "@/lib/photos";
 
 const EXPERIENCES: { n: string; t: string; d: string; img: string; alt?: string; href: string; photo?: Photo }[] = [
@@ -129,6 +131,25 @@ export default function Home() {
                 <b>{v.n}</b><h3>{v.t}</h3><p>{v.d}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section" id="merch">
+        <div className="wrap split">
+          <div className="photo" style={{ aspectRatio: "1/1" }} data-reveal="fade">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img data-parallax="0.07" src="/img/merch.webp" alt="Forest-green branded merchandise laid out on wood: polo shirt, cap, steel bottle, canvas backpack, tees, notebooks, enamel mug, paracord bracelet, patch and sticker" loading="lazy" />
+          </div>
+          <div>
+            <p className="eyebrow" data-reveal>Merch</p>
+            <h2 className="h2" data-reveal="100">Take the <em>wild</em> home</h2>
+            <p className="lede" data-reveal="200" style={{ margin: "24px 0 30px" }}>Kit in our forest green, made for the boat, the trail and the drive home. Message us to order, or ask us to put together a team or school order.</p>
+            <ul className="tags" data-reveal="250">{MERCH.map((m) => <li key={m}>{m}</li>)}</ul>
+            <div className="hero__cta" data-reveal="300" style={{ marginTop: 36, alignItems: "center", gap: "14px 28px" }}>
+              <a className="btn btn--dark" href={waLink("Hi Zambian Outdoors, I'd like to order some merch.")} target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+              <Link className="link" href="/contact?topic=Merchandise">Bulk &amp; team orders →</Link>
+            </div>
           </div>
         </div>
       </section>

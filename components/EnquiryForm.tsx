@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { sendEnquiry } from "@/lib/enquiry";
 
-const TOPICS = ["Discover Scuba Diving", "Try Scuba", "Pond Scuba", "Open Water certification", "Lake Tanganyika dive trip", "Kayaking — Lower Zambezi", "Hiking & trekking", "Off-road safari", "School or corporate programme", "Rescue / industrial training", "Something else"];
+const TOPICS = ["Discover Scuba Diving", "Try Scuba", "Pond Scuba", "Open Water certification", "Lake Tanganyika dive trip", "Kayaking — Lower Zambezi", "Hiking & trekking", "Off-road safari", "School or corporate programme", "Rescue / industrial training", "Merchandise", "Something else"];
 
 export default function EnquiryForm() {
   const [topic, setTopic] = useState(TOPICS[0]);

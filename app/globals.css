@@ -267,6 +267,8 @@ button,input,select,textarea{font:inherit;color:inherit}
 .form__note{font-size:14px;min-height:22px}
 .form__note.ok{color:#2f6b4a}.form__note.err{color:#9b3b2d}
 .hp{position:absolute;left:-9999px}
+.tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.tags li{padding:9px 16px;border:1px solid var(--line-lt);border-radius:999px;font-size:14px;color:var(--stone)}
 .row3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 @media (max-width:760px){.row3{grid-template-columns:1fr}}
 .chips{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
