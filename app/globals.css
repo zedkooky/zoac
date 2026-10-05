@@ -87,7 +87,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .pre{position:fixed;inset:0;z-index:100;background:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;transition:opacity 1s var(--ease),visibility 1s}
 .pre.out{opacity:0;visibility:hidden;pointer-events:none}
 .pre img{width:96px;height:96px;border-radius:50%;opacity:0;animation:fadeup 1.4s var(--ease) .2s forwards}
-.pre__word{font-family:var(--serif);font-size:20px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-lt);opacity:0;animation:fadeup 1.4s var(--ease) .5s forwards}
+.pre__word{font-family:var(--serif);font-size:clamp(15px,4vw,20px);letter-spacing:clamp(.22em,1vw,.42em);line-height:1.6;text-align:center;padding-left:.42em;text-transform:uppercase;color:var(--gold-lt);opacity:0;animation:fadeup 1.4s var(--ease) .5s forwards}
 .pre__line{width:140px;height:1px;background:var(--gold);transform-origin:left;transform:scaleX(0);animation:draw 1.6s var(--ease) .7s forwards}
 
 /* ---------- nav ---------- */
