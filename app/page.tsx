@@ -148,7 +148,7 @@ export default function Home() {
             <ul className="tags" data-reveal="250">{MERCH.map((m) => <li key={m}>{m}</li>)}</ul>
             <div className="hero__cta" data-reveal="300" style={{ marginTop: 36, alignItems: "center", gap: "14px 28px" }}>
               <a className="btn btn--dark" href={waLink("Hi Zambian Outdoor Adventure Company, I'd like to order some merch.")} target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
-              <Link className="link" href="/contact?topic=Merchandise">Bulk &amp; team orders →</Link>
+              <Link className="link" href="/merch">See the full range →</Link>
             </div>
           </div>
         </div>
