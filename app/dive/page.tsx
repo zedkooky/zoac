@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Crumbs from "@/components/Crumbs";
+import AnswerBlock from "@/components/AnswerBlock";
+import Faq from "@/components/Faq";
+import Related from "@/components/Related";
+import { DIVE_LOCATIONS, INSTRUCTORS } from "@/lib/site";
 import PageHero from "@/components/PageHero";
 import DiveMapLoader from "@/components/DiveMapLoader";
 import CtaBand from "@/components/CtaBand";
@@ -19,6 +24,15 @@ export default function Dive() {
         <Link className="btn" href="#map">See the dive map</Link>
         <Link className="btn btn--ghost" href="/courses">Learn to dive</Link>
       </PageHero>
+      <Crumbs trail={[{ name: "Dive", href: "/dive" }]} />
+      <AnswerBlock
+        question="Where can you scuba dive in Zambia?"
+        answer="The Zambian Outdoor Adventure Company dives at five places in Zambia: pools in Lusaka for beginners, pond dives at Chisamba, Mulungushi Dam, Tiffany's Canyon, and Lake Tanganyika, where the home base at Isanga Bay near Mpulungu has 25 mapped dive sites from a sandy training bay to walls past 60 m."
+        facts={[
+          ...DIVE_LOCATIONS.map((l): [string, React.ReactNode] => [l.name, l.href ? <Link href={l.href}>{l.d}</Link> : l.d]),
+          ["Instructors", `PADI-certified (${INSTRUCTORS.map((i) => i.name).join(" & ")})`],
+        ]}
+      />
 
       <section className="section">
         <div className="wrap split">
@@ -55,6 +69,14 @@ export default function Dive() {
           </div>
         </div>
       </section>
+      <Faq items={[
+        { q: "Where can you scuba dive in Zambia?", a: "In Lusaka pools, at Chisamba (pond dives), Mulungushi Dam, Tiffany's Canyon and Lake Tanganyika, with the Zambian Outdoor Adventure Company." },
+        { q: "Can you dive in Lake Tanganyika?", a: "Yes. The Zambian Outdoor Adventure Company's dive base is at Isanga Bay near Mpulungu, on the Zambian shore of Lake Tanganyika, with 25 mapped dive sites." },
+        { q: "What is diving in Lake Tanganyika like?", a: "Lake Tanganyika is one of the world's oldest and deepest freshwater lakes: warm, clear and full of endemic cichlids. Sites range from a sandy training bay and shallow cichlid gardens to boulder reefs and walls deeper than 60 m." },
+        { q: "Can beginners dive in Lake Tanganyika?", a: "Isanga Bay has a sandy training bay for first-timers. Most beginners start with Try Scuba or Discover Scuba Diving in a Lusaka pool." },
+        { q: "Is there snorkelling and freediving?", a: "Yes. Snorkellers and freedivers have protected lagoons and a competition-depth line site at Lake Tanganyika." },
+      ]} title="Diving in Zambia, answered" />
+      <Related keys={["hub", "lusaka", "dsd", "courses", "cost", "expeditions"]} />
       <CtaBand title="Book your dive." />
     </>
   );

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Crumbs from "@/components/Crumbs";
+import Related from "@/components/Related";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 
@@ -22,6 +24,7 @@ export default function Training() {
       <PageHero kicker="Technical & industrial" lines={["Rescue-ready,", <em key="e">to the</em>, "last detail"]}
         lede="The protocols that keep a mine rescue diver safe are the protocols behind a ten-year-old's first breath underwater."
         image="/img/gear.jpg" alt="Dive equipment laid out for a training day" />
+      <Crumbs trail={[{ name: "Training & industry", href: "/training" }]} />
       <section className="section">
         <div className="wrap split split--top">
           <div><p className="eyebrow" data-reveal>What we deliver</p><h2 className="h2" data-reveal="100">Capability that <em>stays behind</em></h2></div>
@@ -41,6 +44,7 @@ export default function Training() {
           </div>
         </div>
       </section>
+      <Related keys={["hub", "kids", "courses", "expeditions", "about", "contact"]} />
       <CtaBand title="Certify your team." />
     </>
   );

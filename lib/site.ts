@@ -27,9 +27,14 @@ export type Course = {
   unit: string;
   blurb: string;
   details: string[];
+  duration: string;
+  minAge: number;
+  swimming: string;
+  where: string;
+  comingSoon?: boolean;
 };
 
-// Prices supplied by Zambian Outdoor Adventure Company. Descriptions for Try Scuba / Pond Scuba / Open Water are placeholders to confirm.
+// Prices, durations, ages and group size supplied by Zambian Outdoor Adventure Company (Oct 2026).
 export const COURSES: Course[] = [
   {
     slug: "discover-scuba-diving",
@@ -44,14 +49,22 @@ export const COURSES: Course[] = [
       "Introduction to basic scuba skills",
       "Digital certificate of participation",
     ],
+    duration: "3–4 hours",
+    minAge: 10,
+    swimming: "Not required",
+    where: "Lusaka pools",
   },
   {
     slug: "try-scuba",
     name: "Try Scuba",
     price: "K1,500",
     unit: "per person",
-    blurb: "A shorter, easy introduction to breathing underwater — the quickest way to find out if diving is for you.",
+    blurb: "An easy, guided introduction to breathing underwater, open to children from age 6 — the quickest way to find out if diving is for you.",
     details: ["Equipment included", "Safety briefing", "Guided shallow-water experience"],
+    duration: "3–4 hours",
+    minAge: 6,
+    swimming: "Not required",
+    where: "Lusaka pools",
   },
   {
     slug: "pond-scuba",
@@ -60,16 +73,46 @@ export const COURSES: Course[] = [
     unit: "full day",
     blurb: "A full day of supervised scuba in a private pond or pool setting — ideal for groups, schools and celebrations.",
     details: ["Full-day programme", "Equipment included", "Certified instructors", "Group and school friendly"],
+    duration: "Full day",
+    minAge: 10,
+    swimming: "Not required",
+    where: "Pond or private pool",
   },
   {
     slug: "open-water",
     name: "Open Water Diver",
     price: "USD 550",
     unit: "or kwacha equivalent · Lake Tanganyika",
-    blurb: "Learn to dive properly and earn your certification on the clear, freshwater reefs of Lake Tanganyika.",
-    details: ["Training at Lake Tanganyika", "Theory, confined water and open-water dives", "Internationally recognised standards"],
+    blurb: "Learn to dive properly and earn a PADI certification on the clear, freshwater reefs of Lake Tanganyika. Coming soon.",
+    details: ["Training at Lake Tanganyika", "Theory, confined water and open-water dives", "Certification issued by PADI"],
+    duration: "To be confirmed",
+    minAge: 10,
+    swimming: "PADI water-skills requirements apply",
+    where: "Lake Tanganyika",
+    comingSoon: true,
   },
 ];
+
+export const GROUP_MAX = 4;
+export const UPDATED = "2026-10-06";
+export const updatedLabel = new Date(UPDATED + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+
+export const INSTRUCTORS = [
+  { name: "Hennie Smit", role: "PADI Instructor · Operations Director" },
+  { name: "Jonathan Chiwenu", role: "PADI Instructor" },
+];
+
+export const LUSAKA_VENUES = ["Millennium Village", "GOGO Fitness", "Radisson Blu Hotel", "Your own pool — we bring the equipment and instructors to you"];
+
+export const DIVE_LOCATIONS = [
+  { name: "Lusaka pools", d: "Try Scuba and Discover Scuba Diving at Millennium Village, GOGO Fitness, the Radisson Blu Hotel or your own pool.", href: "/scuba-diving-lusaka" },
+  { name: "Chisamba", d: "Pond dives." },
+  { name: "Mulungushi Dam", d: "Freshwater dam diving." },
+  { name: "Tiffany's Canyon", d: "Canyon diving." },
+  { name: "Lake Tanganyika", d: "Our home base at Isanga Bay near Mpulungu, with 25 mapped dive sites.", href: "/dive" },
+];
+
+export const OUR_TAKE = "We're the only scuba diving instruction school in Zambia that combines diving with adventure above the water too, from skydiving to water sports.";
 
 export const PERFECT_FOR = ["Beginners", "Families", "Friends", "Corporate team building", "Schools", "Birthday experiences"];
 

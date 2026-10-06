@@ -5,7 +5,7 @@ import "@fontsource/cormorant-garamond/400.css";
 import "@fontsource/cormorant-garamond/500.css";
 import "@fontsource-variable/inter";
 import "./globals.css";
-import { SITE } from "@/lib/site";
+import { INSTRUCTORS, SITE } from "@/lib/site";
 import Preloader from "@/components/Preloader";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -38,6 +38,8 @@ const ORG_SCHEMA = {
   foundingDate: "2023",
   address: { "@type": "PostalAddress", addressLocality: "Lusaka", addressCountry: "ZM" },
   areaServed: { "@type": "Country", name: "Zambia" },
+  knowsAbout: ["Scuba diving", "PADI Discover Scuba Diving", "Scuba diving for children", "Lake Tanganyika diving", "Kayaking", "Hiking", "Off-road safari", "Water rescue training"],
+  employee: INSTRUCTORS.map((i) => ({ "@type": "Person", name: i.name, jobTitle: i.role })),
   contactPoint: SITE.people.map((p) => ({ "@type": "ContactPoint", name: p.name, telephone: p.tel, contactType: "customer service", areaServed: "ZM", availableLanguage: "English" })),
 };
 

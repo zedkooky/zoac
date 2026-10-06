@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Crumbs from "@/components/Crumbs";
+import Related from "@/components/Related";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 import Link from "next/link";
@@ -23,6 +25,7 @@ export default function Expeditions() {
     <>
       <PageHero kicker="Guided expeditions" lines={["Zambia,", <em key="e">beyond</em>, "the postcard"]}
         lede="Rivers, escarpments and bush — led by Zambian guides who grew up in them." image={unsplash(PHOTOS.river.id, 2000)} alt={PHOTOS.river.alt} credit={PHOTOS.river} />
+      <Crumbs trail={[{ name: "Expeditions", href: "/expeditions" }]} />
       <section className="section">
         <div className="wrap">
           {BLOCKS.map((b, i) => (
@@ -42,6 +45,7 @@ export default function Expeditions() {
           ))}
         </div>
       </section>
+      <Related keys={["hub", "dive", "training", "about", "merch", "contact"]} />
       <CtaBand title="Plan your expedition." />
     </>
   );

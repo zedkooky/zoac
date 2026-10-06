@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Crumbs from "@/components/Crumbs";
+import Related from "@/components/Related";
 import PageHero from "@/components/PageHero";
 import { waLink } from "@/lib/site";
 
@@ -26,6 +28,7 @@ export default function Merch() {
         <a className="btn" href={waLink(ORDER_MSG)} target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
         <Link className="btn btn--ghost" href="/contact?topic=Merchandise">Team &amp; school orders</Link>
       </PageHero>
+      <Crumbs trail={[{ name: "Merch", href: "/merch" }]} />
 
       <section className="section">
         <div className="wrap split">
@@ -70,6 +73,7 @@ export default function Merch() {
           </div>
         </div>
       </section>
+      <Related keys={["hub", "courses", "dive", "expeditions", "about", "contact"]} />
     </>
   );
 }

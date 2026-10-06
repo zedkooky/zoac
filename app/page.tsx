@@ -11,7 +11,7 @@ const MERCH = ["Polo shirts", "Tees", "Caps", "Steel bottles", "Canvas backpacks
 import { PHOTOS, unsplash, type Photo } from "@/lib/photos";
 
 const EXPERIENCES: { n: string; t: string; d: string; img: string; alt?: string; href: string; photo?: Photo }[] = [
-  { n: "01", t: "Scuba & snorkel", d: "Lake Tanganyika's clear freshwater reefs, cichlid gardens and granite walls.", img: "/img/gear.jpg", alt: "Scuba gear laid out ready for a dive on Lake Tanganyika", href: "/dive" },
+  { n: "01", t: "Scuba & snorkel", d: "Lake Tanganyika's clear freshwater reefs, cichlid gardens and granite walls.", img: "/img/gear.jpg", alt: "Scuba gear laid out ready for a dive on Lake Tanganyika", href: "/scuba-diving-zambia" },
   { n: "02", t: "Kayak & canoe", d: "Multi-day paddling routes on the Lower Zambezi.", img: unsplash(PHOTOS.river.id, 900), photo: PHOTOS.river, href: "/expeditions#kayak" },
   { n: "03", t: "Hike & trek", d: "Guided walks across the Muchinga Escarpment and Nyika Plateau.", img: unsplash(PHOTOS.walking.id, 900), photo: PHOTOS.walking, href: "/expeditions#trek" },
   { n: "04", t: "Off-road safari", d: "4x4 expeditions into national parks and remote wilderness.", img: unsplash(PHOTOS.drive.id, 900), photo: PHOTOS.drive, href: "/expeditions#safari" },

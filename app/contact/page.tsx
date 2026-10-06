@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import Crumbs from "@/components/Crumbs";
 import PageHero from "@/components/PageHero";
 import EnquiryForm from "@/components/EnquiryForm";
 import { SITE, waLink } from "@/lib/site";
@@ -15,6 +16,7 @@ export default function Contact() {
     <>
       <PageHero kicker="Contact" lines={["Let's plan", <em key="e">the next one</em>]}
         lede="Tell us what you have in mind — a first dive, a river expedition, or a rescue team that needs certifying." image="/img/sunset-boat.jpg" alt="Canoe on Lake Tanganyika at sunset" />
+      <Crumbs trail={[{ name: "Contact", href: "/contact" }]} />
       <section className="section">
         <div className="wrap split split--top">
           <div data-reveal><EnquiryForm /></div>

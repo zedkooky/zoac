@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { NAV, SITE } from "@/lib/site";
+import { GUIDES } from "@/lib/guides";
 
 export default function Footer() {
   return (
@@ -17,6 +18,10 @@ export default function Footer() {
           <div>
             <h4>Explore</h4>
             <ul>{NAV.map((n) => <li key={n.href}><Link href={n.href}>{n.label}</Link></li>)}<li><Link href="/contact">Contact</Link></li></ul>
+          </div>
+          <div>
+            <h4>Scuba guides</h4>
+            <ul>{GUIDES.map((g) => <li key={g.slug}><Link href={`/${g.slug}`}>{g.crumb}</Link></li>)}</ul>
           </div>
           <div>
             <h4>Where we operate</h4>

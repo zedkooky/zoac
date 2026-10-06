@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Crumbs from "@/components/Crumbs";
+import Related from "@/components/Related";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 import { SITE, VALUES } from "@/lib/site";
@@ -14,6 +16,7 @@ export default function About() {
     <>
       <PageHero kicker="Our story" lines={["Built from a", <em key="e">lake town</em>, "outward"]}
         lede="Founded in 2023 on the shores of Lake Tanganyika." image="/img/lakeside.jpg" alt="Dusk on the shore of Lake Tanganyika" />
+      <Crumbs trail={[{ name: "About us", href: "/about" }]} />
       <section className="section">
         <div className="wrap split split--top">
           <div><p className="eyebrow" data-reveal>About us</p><h2 className="h2" data-reveal="100">Where adventure tourism meets <em>technical capability</em></h2></div>
@@ -48,6 +51,7 @@ export default function About() {
           </div>
         </div>
       </section>
+      <Related keys={["hub", "courses", "dive", "expeditions", "training", "contact"]} />
       <CtaBand />
     </>
   );
