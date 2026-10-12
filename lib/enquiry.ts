@@ -1,12 +1,15 @@
 import { SITE } from "@/lib/site";
+import { sourceSummary, track } from "@/lib/track";
 
 export type SendResult = { kind: "ok" | "err"; msg: string };
 
 /** POSTs to /enquiry.php; on failure opens the visitor's mail app pre-filled instead. */
 export async function sendEnquiry(data: Record<string, string>): Promise<SendResult> {
+  data = { ...data, source: sourceSummary(location.pathname) };
   try {
     const res = await fetch("/enquiry.php", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(data) });
     if (!res.ok) throw new Error(String(res.status));
+    track("lead_submit", { page: location.pathname, topic: data.topic || "General" });
     return { kind: "ok", msg: "Thank you — we'll be in touch shortly." };
   } catch {
     const body = Object.entries(data).filter(([k, v]) => v && k !== "website").map(([k, v]) => `${k}: ${v}`).join("\n");

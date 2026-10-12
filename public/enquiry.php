@@ -35,10 +35,12 @@ if (!is_array($data)) $data = $_POST;
 if (!empty($data['website'])) done(true);                  // honeypot: pretend success to bots
 
 $f = [];
-foreach (['name', 'email', 'phone', 'topic', 'group', 'date', 'message'] as $k) {
+foreach (['name', 'email', 'phone', 'topic', 'group', 'date', 'message', 'source'] as $k) {
     $f[$k] = clean((string)($data[$k] ?? ''), $k === 'message' ? 4000 : 200);
 }
-if ($f['name'] === '' || !filter_var($f['email'], FILTER_VALIDATE_EMAIL)) done(false, 422);
+$hasEmail = (bool)filter_var($f['email'], FILTER_VALIDATE_EMAIL);
+if ($f['email'] !== '' && !$hasEmail) done(false, 422);
+if ($f['name'] === '' || (!$hasEmail && $f['phone'] === '')) done(false, 422);   // need a way to reply: email or phone
 
 // Rate limit per visitor IP.
 $ip   = $_SERVER['REMOTE_ADDR'] ?? 'x';
@@ -64,13 +66,13 @@ if ($fh = @fopen($dir . '/enquiries.csv', 'a')) {
 $subject = 'Enquiry: ' . ($f['topic'] ?: 'General') . ' - ' . $f['name'];
 $body = '';
 foreach ($f as $k => $v) $body .= ucfirst($k) . ': ' . $v . "\n";
-$headers = [
+$headers = array_filter([
     'From: ' . FROM_NAME . ' <' . FROM_EMAIL . '>',
-    'Reply-To: ' . str_replace(["\r", "\n"], '', $f['email']),
+    $hasEmail ? 'Reply-To: ' . str_replace(["\r", "\n"], '', $f['email']) : null,
     'MIME-Version: 1.0',
     'Content-Type: text/plain; charset=UTF-8',
     'Content-Transfer-Encoding: 8bit',
-];
+]);
 $sent = @mail(NOTIFY_EMAIL, '=?UTF-8?B?' . base64_encode($subject) . '?=', $body, implode("\r\n", $headers), '-f' . FROM_EMAIL);
 
 done($sent, 500);

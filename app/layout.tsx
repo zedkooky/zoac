@@ -12,6 +12,7 @@ import Footer from "@/components/Footer";
 import WhatsApp from "@/components/WhatsApp";
 import RevealObserver from "@/components/RevealObserver";
 import SmoothScroll from "@/components/SmoothScroll";
+import Analytics from "@/components/Analytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -68,6 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <WhatsApp />
         <RevealObserver />
         <SmoothScroll />
+        <Analytics />
       </body>
     </html>
   );
