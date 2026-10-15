@@ -4,7 +4,7 @@ export type RelatedLink = { href: string; label: string; d: string };
 
 export const RELATED: Record<string, RelatedLink> = {
   hub: { href: "/scuba-diving-zambia", label: "Scuba diving in Zambia", d: "Where to dive, courses, prices and instructors." },
-  dsd: { href: "/discover-scuba-diving-zambia", label: "Discover Scuba Diving", d: "PADI's first-timer experience: K2,200, 3–4 hours, age 10+." },
+  dsd: { href: "/discover-scuba-diving-zambia", label: "Discover Scuba Diving", d: "Our first-timer experience: K2,200, 3–4 hours, age 10+." },
   lusaka: { href: "/scuba-diving-lusaka", label: "Scuba diving in Lusaka", d: "Pool sessions at four Lusaka venues, or your own pool." },
   kids: { href: "/scuba-diving-for-children-zambia", label: "Scuba for children", d: "Try Scuba from age 6, Discover Scuba from 10." },
   cost: { href: "/scuba-diving-cost-zambia", label: "Scuba diving prices", d: "Every course, price and what's included." },

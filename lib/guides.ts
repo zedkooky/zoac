@@ -53,7 +53,7 @@ const QA_INSTR: QA = { q: "Are the instructors certified?", a: `Yes. Sessions ar
 const QA_EXPERIENCE: QA = { q: "Do I need previous diving experience?", a: "No. Try Scuba, Discover Scuba Diving and Pond Scuba are designed for complete beginners." };
 const QA_LUSAKA: QA = { q: "Where can I try scuba diving in Lusaka?", a: `At ${venuesSentence}, or at your own pool. The ${N} brings the equipment and instructors to you.` };
 const QA_BOOK: QA = { q: "How do I book?", a: `Message ${SITE.whatsapp.label} on WhatsApp (${SITE.whatsapp.display}) or send an enquiry through the contact page at zambianadventures.com/contact.` };
-const QA_CERT: QA = { q: "Can I get scuba certified in Zambia?", a: `A PADI Open Water Diver course at Lake Tanganyika is coming soon, with certification issued by PADI. The planned price is ${ow.price} or the kwacha equivalent. Discover Scuba Diving is not a certification; it is an introductory experience.` };
+const QA_CERT: QA = { q: "Can I get scuba certified in Zambia?", a: `An Open Water Diver course at Lake Tanganyika is coming soon, taught by PADI-certified instructors, with certification details to be confirmed before launch. The planned price is ${ow.price} or the kwacha equivalent. Discover Scuba Diving is not a certification; it is an introductory experience.` };
 
 export const GUIDES: Guide[] = [
   {
@@ -86,7 +86,7 @@ export const GUIDES: Guide[] = [
     ],
     faq: [
       { q: "Can you scuba dive in Zambia?", a: `Yes. The ${N} offers scuba diving in Lusaka pools and at Chisamba, Mulungushi Dam, Tiffany's Canyon and Lake Tanganyika, led by PADI-certified instructors.` },
-      { q: "Where can I learn to scuba dive in Zambia?", a: `Beginners start in Lusaka with Try Scuba or Discover Scuba Diving at ${venuesSentence}, or at their own pool. A PADI Open Water course at Lake Tanganyika is coming soon.` },
+      { q: "Where can I learn to scuba dive in Zambia?", a: `Beginners start in Lusaka with Try Scuba or Discover Scuba Diving at ${venuesSentence}, or at their own pool. An Open Water course at Lake Tanganyika is coming soon.` },
       QA_LUSAKA, QA_COST, QA_AGE, QA_SWIM, QA_EXPERIENCE, QA_GROUP, QA_INSTR, QA_CERT, QA_BOOK,
     ],
     related: ["dsd", "lusaka", "kids", "cost", "courses", "dive"],
@@ -94,15 +94,15 @@ export const GUIDES: Guide[] = [
   {
     slug: "discover-scuba-diving-zambia",
     crumb: "Discover Scuba Diving",
-    title: `Discover Scuba Diving in Zambia (PADI): ${dsd.price}, ${dsd.duration}`,
-    description: `PADI Discover Scuba Diving in Lusaka, Zambia: ${dsd.price} per person, ${dsd.duration}, age ${dsd.minAge}+, no swimming needed, maximum ${GROUP_MAX} per group with a PADI-certified instructor.`,
-    kicker: "PADI Discover Scuba Diving",
+    title: `Discover Scuba Diving in Zambia: ${dsd.price}, ${dsd.duration}`,
+    description: `Discover Scuba Diving in Lusaka, Zambia: ${dsd.price} per person, ${dsd.duration}, age ${dsd.minAge}+, no swimming needed, maximum ${GROUP_MAX} per group with a PADI-certified instructor.`,
+    kicker: "Discover Scuba Diving",
     h1: ["Discover Scuba", "Diving"],
-    lede: "Your first breath underwater, in a Lusaka pool, with a PADI instructor beside you.",
+    lede: "Your first breath underwater, in a Lusaka pool, with a PADI-certified instructor beside you.",
     image: "/img/pool-dsd.jpg",
     alt: "Discover Scuba Diving student and instructor underwater in a pool",
     question: "What is Discover Scuba Diving?",
-    answer: `Discover Scuba Diving is PADI's introductory scuba experience for people who have never dived. In Zambia, the ${N} runs it in Lusaka pools for ${dsd.price} per person. It takes ${dsd.duration}, participants must be at least ${dsd.minAge} years old, no swimming ability is needed, and groups are capped at ${GROUP_MAX} people with a PADI-certified instructor.`,
+    answer: `Discover Scuba Diving is our introductory scuba experience for people who have never dived. In Zambia, the ${N} runs it in Lusaka pools for ${dsd.price} per person. It takes ${dsd.duration}, participants must be at least ${dsd.minAge} years old, no swimming ability is needed, and groups are capped at ${GROUP_MAX} people with a PADI-certified instructor.`,
     facts: [
       ["Price", `${dsd.price} per person`],
       ["Duration", dsd.duration],
@@ -119,7 +119,7 @@ export const GUIDES: Guide[] = [
       { eyebrow: "Compare", h: "Discover Scuba or", em: "Try Scuba?", table: { head: ["", "Try Scuba", "Discover Scuba Diving"], rows: [["Price", tryScuba.price, dsd.price], ["Minimum age", `${tryScuba.minAge}`, `${dsd.minAge}`], ["Duration", tryScuba.duration, dsd.duration], ["Includes", tryScuba.details.join(", "), dsd.details.join(", ")]] } },
     ],
     faq: [
-      { q: "What is Discover Scuba Diving?", a: `PADI's introductory scuba experience for complete beginners. With the ${N} it runs in Lusaka pools, takes ${dsd.duration} and costs ${dsd.price}.` },
+      { q: "What is Discover Scuba Diving?", a: `Our introductory scuba experience for complete beginners. It runs in Lusaka pools, takes ${dsd.duration} and costs ${dsd.price}.` },
       { q: "Is Discover Scuba Diving a certification?", a: "No. It is an introductory experience, not a diving certification. You receive a digital certificate of participation." },
       { q: "How old do you have to be for Discover Scuba Diving?", a: `At least ${dsd.minAge} years old. Children from ${tryScuba.minAge} can join Try Scuba instead.` },
       QA_SWIM, QA_EXPERIENCE,
@@ -133,7 +133,7 @@ export const GUIDES: Guide[] = [
     slug: "scuba-diving-lusaka",
     crumb: "Scuba diving in Lusaka",
     title: `Scuba Diving in Lusaka: Try Scuba from ${tryScuba.price}`,
-    description: `Try scuba diving in Lusaka at ${venuesSentence} or your own pool. Try Scuba ${tryScuba.price} (age ${tryScuba.minAge}+), Discover Scuba Diving ${dsd.price} (age ${dsd.minAge}+), ${dsd.duration}, PADI instructors.`,
+    description: `Try scuba diving in Lusaka at ${venuesSentence} or your own pool. Try Scuba ${tryScuba.price} (age ${tryScuba.minAge}+), Discover Scuba Diving ${dsd.price} (age ${dsd.minAge}+), ${dsd.duration}, PADI-certified instructors.`,
     kicker: "Lusaka",
     h1: ["Scuba diving", "in Lusaka"],
     lede: "Four pools across the city, or your own. We bring the kit and the instructors.",
@@ -168,10 +168,10 @@ export const GUIDES: Guide[] = [
     slug: "scuba-diving-for-children-zambia",
     crumb: "Scuba diving for children",
     title: `Scuba Diving for Children in Zambia: Ages ${tryScuba.minAge}+`,
-    description: `Children can scuba dive in Zambia from age ${tryScuba.minAge} with Try Scuba (${tryScuba.price}) and from age ${dsd.minAge} with Discover Scuba Diving (${dsd.price}). No swimming needed, max ${GROUP_MAX} per group, PADI instructors.`,
+    description: `Children can scuba dive in Zambia from age ${tryScuba.minAge} with Try Scuba (${tryScuba.price}) and from age ${dsd.minAge} with Discover Scuba Diving (${dsd.price}). No swimming needed, max ${GROUP_MAX} per group, PADI-certified instructors.`,
     kicker: "Children & families",
     h1: ["Scuba diving", "for children"],
-    lede: "From age six, in a pool, with a PADI instructor and no more than four in the group.",
+    lede: "From age six, in a pool, with a PADI-certified instructor and no more than four in the group.",
     image: "/img/pool-dsd.jpg",
     alt: "A young diver and instructor underwater in a pool",
     question: "Can children scuba dive in Zambia?",
@@ -203,19 +203,19 @@ export const GUIDES: Guide[] = [
     slug: "scuba-diving-cost-zambia",
     crumb: "Scuba diving prices",
     title: "How Much Does Scuba Diving Cost in Zambia? 2026 Prices",
-    description: `Scuba diving prices in Zambia: Try Scuba ${tryScuba.price}, Discover Scuba Diving ${dsd.price}, Pond Scuba ${pond.price} (full day), equipment included. PADI Open Water coming soon at ${ow.price}.`,
+    description: `Scuba diving prices in Zambia: Try Scuba ${tryScuba.price}, Discover Scuba Diving ${dsd.price}, Pond Scuba ${pond.price} (full day), equipment included. Open Water course coming soon at ${ow.price}.`,
     kicker: "Prices",
     h1: ["What scuba", "costs in Zambia"],
     lede: "Every experience, every price, and what's included.",
     image: "/img/gear.jpg",
     alt: "Scuba equipment included in the price, laid out on the ground",
     question: "How much does scuba diving cost in Zambia?",
-    answer: `With the ${N}, scuba diving in Zambia costs ${tryScuba.price} per person for Try Scuba, ${dsd.price} for Discover Scuba Diving and ${pond.price} for a full day of Pond Scuba. Equipment is included in every price. A PADI Open Water Diver course is coming soon at ${ow.price} or the kwacha equivalent.`,
+    answer: `With the ${N}, scuba diving in Zambia costs ${tryScuba.price} per person for Try Scuba, ${dsd.price} for Discover Scuba Diving and ${pond.price} for a full day of Pond Scuba. Equipment is included in every price. An Open Water Diver course is coming soon at ${ow.price} or the kwacha equivalent.`,
     facts: [
       ["Try Scuba", `${tryScuba.price} per person`],
       ["Discover Scuba Diving", `${dsd.price} per person`],
       ["Pond Scuba", `${pond.price}, full day`],
-      ["PADI Open Water", `${ow.price} (coming soon)`],
+      ["Open Water course", `${ow.price} (coming soon)`],
       ["Equipment", "Included"],
       ["Group & school bookings", "Quote on request"],
     ],
@@ -227,7 +227,7 @@ export const GUIDES: Guide[] = [
     faq: [
       QA_COST,
       { q: "Is equipment included in the price?", a: "Yes. Scuba equipment is included in Try Scuba, Discover Scuba Diving and Pond Scuba." },
-      { q: "How much is the PADI Open Water course?", a: `The PADI Open Water Diver course at Lake Tanganyika is coming soon, planned at ${ow.price} or the kwacha equivalent.` },
+      { q: "How much is the Open Water course?", a: `The Open Water Diver course at Lake Tanganyika is coming soon, planned at ${ow.price} or the kwacha equivalent.` },
       { q: "Do you offer group or school prices?", a: "Yes, on request. Send the group size and dates through WhatsApp or the contact page for a quote." },
       QA_AGE, QA_SWIM, QA_BOOK,
     ],

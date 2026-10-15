@@ -35,7 +35,7 @@ const COURSES_SCHEMA = {
 
 export const metadata: Metadata = {
   title: "Scuba courses & prices",
-  description: "Scuba courses in Zambia with PADI instructors: Try Scuba K1,500 (age 6+), Discover Scuba Diving K2,200 (age 10+), Pond Scuba K2,500 full day. No swimming needed, max 4 per group. PADI Open Water coming soon.",
+  description: "Scuba courses in Zambia with PADI-certified instructors: Try Scuba K1,500 (age 6+), Discover Scuba Diving K2,200 (age 10+), Pond Scuba K2,500 full day. No swimming needed, max 4 per group. Open Water course coming soon.",
   alternates: { canonical: "/courses" },
 };
 
@@ -49,7 +49,7 @@ export default function Courses() {
       <Crumbs trail={[{ name: "Courses & prices", href: "/courses" }]} />
       <AnswerBlock
         question="What scuba courses can you do in Zambia?"
-        answer={`The Zambian Outdoor Adventure Company offers three beginner scuba experiences in Zambia, all led by PADI-certified instructors: Try Scuba (K1,500, from age 6), Discover Scuba Diving (K2,200, from age 10) and Pond Scuba (K2,500 for a full day, from age 10). No swimming ability is needed and groups are capped at ${GROUP_MAX} people. A PADI Open Water Diver course at Lake Tanganyika is coming soon.`}
+        answer={`The Zambian Outdoor Adventure Company offers three beginner scuba experiences in Zambia, all led by PADI-certified instructors: Try Scuba (K1,500, from age 6), Discover Scuba Diving (K2,200, from age 10) and Pond Scuba (K2,500 for a full day, from age 10). No swimming ability is needed and groups are capped at ${GROUP_MAX} people. An Open Water Diver course at Lake Tanganyika is coming soon.`}
         facts={[
           ["Instructors", <>PADI-certified ({INSTRUCTORS.map((i) => i.name).join(" & ")})</>],
           ["Prices", "K1,500 – K2,500 per person"],
@@ -98,13 +98,13 @@ export default function Courses() {
         </div>
       </section>
       <Faq items={[
-        { q: "Which scuba course should a beginner choose?", a: "Try Scuba suits children from age 6 and anyone wanting a first taste. Discover Scuba Diving (age 10+) is PADI's introductory experience and adds basic scuba skills and a digital certificate of participation. Pond Scuba is a full day for groups, schools and celebrations." },
-        { q: "How much do scuba courses cost in Zambia?", a: "Try Scuba K1,500, Discover Scuba Diving K2,200 and Pond Scuba K2,500 for a full day, per person with equipment included. The PADI Open Water course is coming soon at USD 550 or the kwacha equivalent." },
+        { q: "Which scuba course should a beginner choose?", a: "Try Scuba suits children from age 6 and anyone wanting a first taste. Discover Scuba Diving (age 10+) is our introductory experience and adds basic scuba skills and a digital certificate of participation. Pond Scuba is a full day for groups, schools and celebrations." },
+        { q: "How much do scuba courses cost in Zambia?", a: "Try Scuba K1,500, Discover Scuba Diving K2,200 and Pond Scuba K2,500 for a full day, per person with equipment included. The Open Water course is coming soon at USD 550 or the kwacha equivalent." },
         { q: "Do I need to know how to swim?", a: "No. Swimming ability is not required for Try Scuba, Discover Scuba Diving or Pond Scuba." },
         { q: "What is the minimum age?", a: "6 years for Try Scuba and 10 years for Discover Scuba Diving, Pond Scuba and Open Water." },
         { q: "How many people are in a group?", a: `A maximum of ${GROUP_MAX} participants per group.` },
         { q: "Who are the instructors?", a: `PADI-certified instructors ${INSTRUCTORS.map((i) => i.name).join(" and ")}.` },
-        { q: "Can I get a PADI certification?", a: "The PADI Open Water Diver course at Lake Tanganyika is coming soon, with certification issued by PADI. Register your interest through the contact page." },
+        { q: "Can I get scuba certified?", a: "An Open Water Diver course at Lake Tanganyika is coming soon, taught by PADI-certified instructors. Certification details will be confirmed before launch. Register your interest through the contact page." },
       ]} />
       <Related keys={["hub", "dsd", "lusaka", "kids", "cost", "dive"]} />
       <CtaBand title="Ready to try it?" />
