@@ -21,7 +21,7 @@ export default function Footer() {
           </div>
           <div>
             <h4>Scuba guides</h4>
-            <ul>{GUIDES.map((g) => <li key={g.slug}><Link href={`/${g.slug}`}>{g.crumb}</Link></li>)}</ul>
+            <ul>{GUIDES.map((g) => <li key={g.slug}><Link href={`/${g.slug}`}>{g.crumb}</Link></li>)}<li><Link href="/articles/discover-scuba-diving-zambia">Discover Scuba Diving</Link></li><li><Link href="/articles/scuba-diving-for-children">Scuba for children</Link></li><li><Link href="/articles">All articles →</Link></li></ul>
           </div>
           <div>
             <h4>Where we operate</h4>

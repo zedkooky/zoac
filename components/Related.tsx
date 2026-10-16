@@ -4,9 +4,11 @@ export type RelatedLink = { href: string; label: string; d: string };
 
 export const RELATED: Record<string, RelatedLink> = {
   hub: { href: "/scuba-diving-zambia", label: "Scuba diving in Zambia", d: "Where to dive, courses, prices and instructors." },
-  dsd: { href: "/discover-scuba-diving-zambia", label: "Discover Scuba Diving", d: "Our first-timer experience: K2,200, 3–4 hours, age 10+." },
+  dsd: { href: "/articles/discover-scuba-diving-zambia", label: "Discover Scuba Diving", d: "Our first-timer experience: K2,200, 3–4 hours, age 10+." },
   lusaka: { href: "/scuba-diving-lusaka", label: "Scuba diving in Lusaka", d: "Pool sessions at four Lusaka venues, or your own pool." },
-  kids: { href: "/scuba-diving-for-children-zambia", label: "Scuba for children", d: "Try Scuba from age 6, Discover Scuba from 10." },
+  kids: { href: "/articles/scuba-diving-for-children", label: "Scuba for children", d: "Try Scuba from age 6, Discover Scuba from 10." },
+  articles: { href: "/articles", label: "Beginner articles", d: "What to expect, safety, Try Scuba and how to book." },
+  safety: { href: "/articles/scuba-diving-safety-for-beginners", label: "Scuba safety for beginners", d: "The rules that matter on your first dives." },
   cost: { href: "/scuba-diving-cost-zambia", label: "Scuba diving prices", d: "Every course, price and what's included." },
   courses: { href: "/courses", label: "Courses & prices", d: "All four scuba experiences side by side." },
   dive: { href: "/dive", label: "Lake Tanganyika dive map", d: "25 mapped sites from Isanga Bay, Mpulungu." },

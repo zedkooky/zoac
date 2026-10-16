@@ -99,7 +99,7 @@ export const GROUP_REWARD = "Book a group session and the organiser gets a free 
 
 // Umami Cloud (free, cookieless). Paste the website ID from cloud.umami.is to switch tracking on.
 export const ANALYTICS = { umamiId: "", umamiSrc: "https://cloud.umami.is/script.js" };
-export const UPDATED = "2026-10-06";
+export const UPDATED = "2026-10-16";
 export const updatedLabel = new Date(UPDATED + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
 
 export const INSTRUCTORS = [
