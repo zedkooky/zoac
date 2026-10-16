@@ -128,7 +128,7 @@ export default async function ArticlePage({ params }: Params) {
 
       <div id="faq"><Faq items={a.faq} /></div>
 
-      <section className="section">
+      <aside className="section">
         <div className="wrap">
           <p className="eyebrow">Keep reading</p>
           <h2 className="h2">Related <em>articles</em></h2>
@@ -137,8 +137,8 @@ export default async function ArticlePage({ params }: Params) {
             <li><Link href="/scuba-diving-zambia"><b>Scuba diving in Zambia →</b><span>Where to dive, courses, prices and instructors.</span></Link></li>
           </ul>
         </div>
-      </section>
-      <CtaBand title="Ready for your first breath underwater?" />
+      </aside>
+      <aside><CtaBand title="Ready for your first breath underwater?" /></aside>
     </>
   );
 }
