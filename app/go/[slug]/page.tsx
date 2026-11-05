@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     title: l.title,
     description: l.description,
     alternates: { canonical: `/go/${l.slug}` },
-    robots: { index: false, follow: true },
+    robots: { index: ["schools", "team-building", "kids-scuba-party"].includes(l.slug), follow: true },
     openGraph: { title: l.title, description: l.description, images: [{ url: l.image, alt: l.alt }] },
   };
 }
